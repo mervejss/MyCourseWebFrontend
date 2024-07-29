@@ -8,6 +8,7 @@ function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +17,7 @@ function Register() {
     console.log('Kullanıcı Adı:', username);
     console.log('Kullanıcı E-Posta:', email);
     console.log('Kullanıcı Şifre:', password);
+    console.log('Kullanıcı Rolü:', role); // 0 veya 1
   };
 
   return (
@@ -57,6 +59,28 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+        </div>
+        <div className="radio-group">
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="0"
+              checked={role === '0'}
+              onChange={() => setRole('0')}
+            />
+            Eğitimciyim
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="1"
+              checked={role === '1'}
+              onChange={() => setRole('1')}
+            />
+            Müşteriyim
+          </label>
         </div>
         <button type="submit" className="register-button">
           Kaydol
