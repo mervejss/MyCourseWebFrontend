@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './Register.css';
+import axios from 'axios';
 
 function Register() {
   const [fullName, setFullName] = useState('');
@@ -10,15 +11,32 @@ function Register() {
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
 
-  const handleSubmit = (e) => {
+
+
+const handleSubmit = async (e) => {
     e.preventDefault();
-    // Console'a yazdır
-    console.log('Kullanıcı Tam Ad:', fullName);
-    console.log('Kullanıcı Adı:', username);
-    console.log('Kullanıcı E-Posta:', email);
-    console.log('Kullanıcı Şifre:', password);
-    console.log('Kullanıcı Rolü:', role); // 0 veya 1
-  };
+ // Console'a yazdır
+ console.log('Kullanıcı Tam Ad:', fullName);
+ console.log('Kullanıcı Adı:', username);
+ console.log('Kullanıcı E-Posta:', email);
+ console.log('Kullanıcı Şifre:', password);
+ console.log('Kullanıcı Rolü:', role); // 0 veya 1
+    const userDTO = {
+        userFullName: fullName,
+        userName: username,
+        userMail: email,
+        userPassword: password,
+        userRoleID: role === '0' ? 6 : 7, // Eğitmen için 1, Müşteri için 2 olduğunu varsayıyoruz
+    };
+
+    try {
+      const response = await axios.post('http://localhost:8080/users/register', userDTO);
+      console.log('Kayıt Başarılı:', response.data);
+    } catch (error) {
+        console.error('Kayıt Hatası:', error);
+    }
+};
+  
 
   return (
     <div className="register-container">
