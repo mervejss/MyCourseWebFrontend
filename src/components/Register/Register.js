@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import './Register.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [fullName, setFullName] = useState('');
@@ -10,6 +11,7 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
+  const navigate = useNavigate(); // useNavigate hook'u ile yönlendirme
 
 
 
@@ -32,6 +34,9 @@ const handleSubmit = async (e) => {
     try {
       const response = await axios.post('http://localhost:8080/users/register', userDTO);
       console.log('Kayıt Başarılı:', response.data);
+
+      navigate('/login'); // Ana sayfaya yönlendir
+
     } catch (error) {
         console.error('Kayıt Hatası:', error);
     }
@@ -100,7 +105,7 @@ const handleSubmit = async (e) => {
             Müşteriyim
           </label>
         </div>
-        <button type="submit" className="register-button">
+        <button type="submit" className="register-button" disabled={!role}>
           Kaydol
         </button>
       </form>

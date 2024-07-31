@@ -15,11 +15,11 @@ function App() {
             <Link to="/login" className="App-link">
               Giriş Yap
             </Link>
-            {' | '}
+           
             <Link to="/register" className="App-link">
               Kayıt Ol
             </Link>
-            {' | '}
+          
             <Link to="/logout" className="App-link">
               Çıkış Yap
             </Link>

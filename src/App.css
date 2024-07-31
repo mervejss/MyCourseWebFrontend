@@ -1,9 +1,26 @@
+.App-header {
+  display: flex;
+  justify-content: flex-start; /* Aligns content to the left */
+  padding: 10px;
+  background-color: #282c34;
+}
+
+nav {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
 .App-link {
-  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #282c34;
   text-decoration: none;
-  color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .App-link:hover {
-  text-decoration: underline;
+  background-color: #21a1f1;
+  text-decoration: none;
 }
