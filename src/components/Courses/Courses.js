@@ -7,6 +7,7 @@ const Courses = () => {
     <div className="courses-container">
       <h1>KURSLARA HOŞ GELDİNİZ</h1>
     </div>
+    
   );
 };
 
