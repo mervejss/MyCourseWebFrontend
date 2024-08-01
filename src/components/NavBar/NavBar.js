@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import './Navbar.css';
 import Register from '../Register/Register';
@@ -6,25 +6,41 @@ import Login from '../Login/Login';
 import Courses from '../Courses/Courses';
 import Logout from '../Logout/Logout';
 import Profile from '../Profile/Profile';
+import PurchaseHistory from '../PurchaseHistory/PurchaseHistory'; // import your components here
+import EditProfile from '../EditProfile/EditProfile';
 
 function Navbar() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleMouseEnter = () => setIsDropdownOpen(true);
+  const handleMouseLeave = () => setTimeout(() => setIsDropdownOpen(false), 200);
+
   return (
     <div className="App">
       <header className="App-header">
-        <nav>
-          <Link to="/login" className="App-link">
-            Giriş Yap
-          </Link>
-          <Link to="/register" className="App-link">
-            Kayıt Ol
-          </Link>
-          <Link to="/logout" className="App-link">
-            Çıkış Yap
-          </Link>
-          <Link to="/profile" className="App-link">
-            Profilim
-          </Link>
+        <nav className="nav-links">
+          <Link to="/login" className="App-link">Giriş Yap</Link>
+          <Link to="/register" className="App-link">Kayıt Ol</Link>
+          <Link to="/logout" className="App-link">Çıkış Yap</Link>
         </nav>
+        <div 
+          className="nav-profile"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Link to="/profile" className="App-link profile-link">Profilim</Link>
+          {isDropdownOpen && (
+            <div 
+              className="dropdown-menu"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Link to="/courses" className="dropdown-item">Kurslarım</Link>
+              <Link to="/purchase-history" className="dropdown-item">Satın alma geçmişim</Link>
+              <Link to="/edit-profile" className="dropdown-item">Profili düzenle</Link>
+            </div>
+          )}
+        </div>
       </header>
       <Routes>
         <Route path="/register" element={<Register />} />
@@ -32,6 +48,8 @@ function Navbar() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/purchase-history" element={<PurchaseHistory />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
     </div>
   );

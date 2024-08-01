@@ -1,28 +1,68 @@
+/* Navbar.css */
+
+.App {
+  text-align: center;
+}
+
 .App-header {
-    display: flex;
-    justify-content: flex-start; /* Aligns content to the left */
-    padding: 10px;
-    background-color: #282c34;
-    margin-bottom: 20px;
-  }
-  
-  nav {
-    display: flex;
-    gap: 10px; /* Space between buttons */
-  }
-  
-  .App-link {
-    padding: 10px 20px;
-    background-color: #61dafb;
-    color: #282c34;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .App-link:hover {
-    background-color: #21a1f1;
-    text-decoration: none;
-  }
-  
+  background-color: #282c34;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+margin-bottom: 10px;
+
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-link {
+  background-color: #61dafb;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s;
+}
+
+.profile-link:hover {
+  background-color: #4fa3c8;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #282c34;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column; 
+  min-width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  color: #61dafb;
+  text-decoration: none;
+  padding: 10px ;
+  margin: 5px;
+  border-bottom: 1px solid #444;
+}
+
+.dropdown-item:hover {
+  background-color: #4fa3c8;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
