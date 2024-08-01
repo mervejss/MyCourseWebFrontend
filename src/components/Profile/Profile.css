@@ -1,0 +1,12 @@
+/* Profile.css */
+
+.profile-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .profile-container h1 {
+    color: #333; /* Renk seçimini ihtiyaçlarınıza göre değiştirebilirsiniz */
+    font-size: 2rem;
+  }
+  

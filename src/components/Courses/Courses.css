@@ -1,0 +1,42 @@
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .course-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    background-color: #f9f9f9;
+  }
+  
+  .course-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .user-name {
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 25px;
+    font-style: italic;
+
+  }
+  
+  
+  .course-description {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .course-time,
+  .course-price {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
