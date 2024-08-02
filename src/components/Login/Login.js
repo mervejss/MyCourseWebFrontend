@@ -56,6 +56,7 @@ function Login() {
     }, [navigate]);
 
     return (
+        
         <div className="login-container">
             <h1 className="login-title">GİRİŞ YAP</h1>
             <form onSubmit={handleSubmit} className="login-form">
