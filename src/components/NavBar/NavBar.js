@@ -8,6 +8,7 @@ import Logout from '../Logout/Logout';
 import Profile from '../Profile/Profile';
 import PurchaseHistory from '../PurchaseHistory/PurchaseHistory'; // import your components here
 import EditProfile from '../EditProfile/EditProfile';
+import Home from '../Home/Home';
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,6 +19,15 @@ function Navbar() {
   return (
     <div className="App">
       <header className="App-header">
+        <div className="logo-container">
+          <Link to="/home">
+            <img
+              src="https://github.com/mervejss/MyCourseWebFrontend/blob/64d6b634cd7d2c9169337bfa75117fc511bfdc15/public/logo1.png?raw=true"
+              alt="Logo"
+              className="logo"
+            />
+          </Link>
+        </div>
         <nav className="nav-links">
           <Link to="/login" className="App-link">Giriş Yap</Link>
           <Link to="/register" className="App-link">Kayıt Ol</Link>
@@ -50,6 +60,7 @@ function Navbar() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/purchase-history" element={<PurchaseHistory />} />
         <Route path="/edit-profile" element={<EditProfile />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </div>
   );
