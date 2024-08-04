@@ -1,11 +1,15 @@
+.profile-page {
+  text-align: left; /* Başlık ve içerik sola yaslanacak */
+  padding: 20px;
+}
+
 .profile-container {
-  text-align: center;
   padding: 20px;
   border: 1px solid #ddd; /* Container'a kenarlık ekleyin */
   border-radius: 8px; /* Köşeleri yuvarlatın */
   max-width: 600px; /* Maksimum genişlik */
-  margin: auto; /* Ortalamak için */
   background-color: #f9f9f9; /* Arka plan rengi */
+  margin: auto; /* Ortalamak için */
 }
 
 .profile-container h1 {
