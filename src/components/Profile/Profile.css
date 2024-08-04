@@ -1,12 +1,25 @@
-/* Profile.css */
-
 .profile-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .profile-container h1 {
-    color: #333; /* Renk seçimini ihtiyaçlarınıza göre değiştirebilirsiniz */
-    font-size: 2rem;
-  }
-  
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd; /* Container'a kenarlık ekleyin */
+  border-radius: 8px; /* Köşeleri yuvarlatın */
+  max-width: 600px; /* Maksimum genişlik */
+  margin: auto; /* Ortalamak için */
+  background-color: #f9f9f9; /* Arka plan rengi */
+}
+
+.profile-container h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px; /* Başlık ile detaylar arasına boşluk */
+}
+
+.profile-details p {
+  font-size: 1rem;
+  margin: 10px 0; /* Her detayın arasına boşluk ekleyin */
+}
+
+.profile-details strong {
+  display: inline-block;
+  margin-right: 10px; /* Etiket ile değer arasına boşluk */
+}
