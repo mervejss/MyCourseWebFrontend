@@ -27,3 +27,42 @@
   display: inline-block;
   margin-right: 10px; /* Etiket ile değer arasına boşluk */
 }
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-profile-form label {
+  margin: 5px 0;
+}
+
+.edit-profile-form input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-profile-form button {
+  margin-top: 20px;
+  background-color: #28a745;
+}
+
+.edit-profile-form button:hover {
+  background-color: #218838;
+}
+

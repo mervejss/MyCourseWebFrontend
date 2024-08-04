@@ -1,0 +1,25 @@
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-profile-form label {
+    margin: 5px 0;
+  }
+  
+  .edit-profile-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .edit-profile-form button {
+    margin-top: 20px;
+    background-color: #28a745;
+  }
+  
+  .edit-profile-form button:hover {
+    background-color: #218838;
+  }
+  
