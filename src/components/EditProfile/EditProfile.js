@@ -42,43 +42,70 @@ const EditProfile = ({ user, setUser, setIsEditing }) => {
 
   return (
     <form onSubmit={handleSubmit} className="edit-profile-form">
-      <label>
-        Kullanıcı Adı Soyadı:
-        <input type="text" name="userFullName" value={formData.userFullName} onChange={handleChange} />
-      </label>
-      <label>
-        Kullanıcı Rumuz:
-        <input type="text" name="userName" value={formData.userName} onChange={handleChange} />
-      </label>
-      <label>
-        Kullanıcı E-Posta:
-        <input type="email" name="userMail" value={formData.userMail} onChange={handleChange} />
-      </label>
-      <label>
-        Kullanıcı Şifre:
-        <input type="password" name="userPassword" value={formData.userPassword} onChange={handleChange} />
-      </label>
-      <div className="radio-group">
-        <label>
-          <input
-            type="radio"
-            name="role"
-            value="0"
-            checked={role === '0'}
-            onChange={() => handleRoleChange('0')}
-          />
-          Eğitimciyim
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="role"
-            value="1"
-            checked={role === '1'}
-            onChange={() => handleRoleChange('1')}
-          />
-          Müşteriyim
-        </label>
+      <div className="form-group">
+        <label htmlFor="userFullName">Kullanıcı Adı Soyadı:</label>
+        <input
+          type="text"
+          id="userFullName"
+          name="userFullName"
+          value={formData.userFullName}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="userName">Kullanıcı Rumuz:</label>
+        <input
+          type="text"
+          id="userName"
+          name="userName"
+          value={formData.userName}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="userMail">Kullanıcı E-Posta:</label>
+        <input
+          type="email"
+          id="userMail"
+          name="userMail"
+          value={formData.userMail}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="userPassword">Kullanıcı Şifre:</label>
+        <input
+          type="password"
+          id="userPassword"
+          name="userPassword"
+          value={formData.userPassword}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <fieldset className="radio-group">
+          <legend>Kullanıcı Tipi:</legend>
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="0"
+              checked={role === '0'}
+              onChange={() => handleRoleChange('0')}
+            />
+            Eğitimciyim
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="role"
+              value="1"
+              checked={role === '1'}
+              onChange={() => handleRoleChange('1')}
+            />
+            Müşteriyim
+          </label>
+        </fieldset>
       </div>
       <button type="submit">Kaydet</button>
     </form>

@@ -1,25 +1,59 @@
+/* C:\VsCodeProjects\my-course-web\src\components\EditProfile\EditProfile.css */
+
 .edit-profile-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .edit-profile-form label {
-    margin: 5px 0;
-  }
-  
-  .edit-profile-form input {
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .edit-profile-form button {
-    margin-top: 20px;
-    background-color: #28a745;
-  }
-  
-  .edit-profile-form button:hover {
-    background-color: #218838;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Form genişliğini sınırla */
+  margin: auto; /* Formu ortala */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%; /* Genişliği tam yap */
+  box-sizing: border-box; /* Padding ve border hesaplaması dahil et */
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group legend {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.radio-group label {
+  margin: 5px 0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #218838;
+}
