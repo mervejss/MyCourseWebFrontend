@@ -1,0 +1,46 @@
+.course-details-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .course-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .course-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .course-category,
+  .course-instructor,
+  .course-duration,
+  .course-price {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .course-rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star {
+    font-size: 1.5rem;
+    color: #ddd;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .rating-score {
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+  

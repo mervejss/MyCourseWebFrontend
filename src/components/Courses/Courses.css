@@ -38,10 +38,12 @@
   margin-bottom: 5px;
 }
 
-.course-score {
-  
-  gap: 2px;
-  margin-top: 10px;
+.course-score-container {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjusts space between stars and score */
+  margin-top: 10px;  
+  justify-content: center; /* Center child elements horizontally */
 }
 
 .star {
@@ -51,4 +53,28 @@
 
 .star.filled {
   color: gold;
+}
+
+.course-score {
+  font-size: 14px; /* Same size as stars */
+}
+/* C:\VsCodeProjects\my-course-web\src\components\Courses.css */
+
+.course-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  display: block; /* Make the link cover the entire card */
+}
+
+.course-card {
+  /* Add your existing styles for the course card */
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 8px;
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.course-card:hover {
+  transform: scale(1.02); /* Slightly enlarge the card on hover */
 }

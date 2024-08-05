@@ -7,7 +7,6 @@ import Courses from '../Courses/Courses';
 import Logout from '../Logout/Logout';
 import Profile from '../Profile/Profile';
 import PurchaseHistory from '../PurchaseHistory/PurchaseHistory'; // import your components here
-import EditProfile from '../EditProfile/EditProfile';
 import Home from '../Home/Home';
 import Log from '../Log/Log';
 
@@ -47,26 +46,14 @@ function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <Link to="/courses" className="dropdown-item">Kurslarım</Link>
-              <Link to="/purchase-history" className="dropdown-item">Satın alma geçmişim</Link>
-              <Link to="/edit-profile" className="dropdown-item">Profili düzenle</Link>
+              <Link to="/purchase-history" className="dropdown-item">Sipariş/Satış Geçmişim</Link>
               <Link to="/log" className="dropdown-item">Log Kayıtlarım</Link>
 
             </div>
           )}
         </div>
       </header>
-      <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/purchase-history" element={<PurchaseHistory />} />
-        <Route path="/edit-profile" element={<EditProfile />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/log" element={<Log />} />
-
-      </Routes>
+      
     </div>
   );
 }
