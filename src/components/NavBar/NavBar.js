@@ -9,6 +9,7 @@ import Profile from '../Profile/Profile';
 import PurchaseHistory from '../PurchaseHistory/PurchaseHistory'; // import your components here
 import EditProfile from '../EditProfile/EditProfile';
 import Home from '../Home/Home';
+import Log from '../Log/Log';
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -48,6 +49,8 @@ function Navbar() {
               <Link to="/courses" className="dropdown-item">Kurslarım</Link>
               <Link to="/purchase-history" className="dropdown-item">Satın alma geçmişim</Link>
               <Link to="/edit-profile" className="dropdown-item">Profili düzenle</Link>
+              <Link to="/log" className="dropdown-item">Log Kayıtlarım</Link>
+
             </div>
           )}
         </div>
@@ -61,6 +64,8 @@ function Navbar() {
         <Route path="/purchase-history" element={<PurchaseHistory />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/log" element={<Log />} />
+
       </Routes>
     </div>
   );

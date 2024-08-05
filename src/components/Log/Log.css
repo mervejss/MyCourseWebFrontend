@@ -1,0 +1,35 @@
+.log-container {
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .log-table th,
+  .log-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .log-table th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  .log-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .log-table tr:hover {
+    background-color: #ddd;
+  }
+  

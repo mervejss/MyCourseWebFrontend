@@ -3,10 +3,12 @@ import axios from 'axios';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { addLogEntry } from '../Log/LogUtils'; 
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isAutoLogged, setIsAutoLogged] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -17,12 +19,15 @@ function Login() {
             });
 
             if (response.status === 200) {
-                // Store user information in cookies
+                const userID = response.data.userID;
+
                 Cookies.set('userEmail', email, { expires: 7 });
                 Cookies.set('userPassword', password, { expires: 7 });
-                Cookies.set('userID', response.data.userID, { expires: 7 });
+                Cookies.set('userID', userID, { expires: 7 });
 
                 console.log('Login successful:', response.data);
+                await addLogEntry(userID, 0); // 0 corresponds to LOGIN
+
                 navigate('/courses');
             }
         } catch (error) {
@@ -31,24 +36,35 @@ function Login() {
     };
 
     useEffect(() => {
-        const storedEmail = Cookies.get('userEmail');
-        const storedPassword = Cookies.get('userPassword');
 
-        if (storedEmail && storedPassword) {
-            axios.post('http://localhost:8080/users/login', null, {
-                params: { email: storedEmail, password: storedPassword }
-            })
-            .then(response => {
-                if (response.status === 200) {
-                    navigate('/courses');
+        const attemptAutoLogin = async () => {
+            const storedEmail = Cookies.get('userEmail');
+            const storedPassword = Cookies.get('userPassword');
+    
+            if (storedEmail && storedPassword && !isAutoLogged) {
+                try {
+                    const response = await axios.post('http://localhost:8080/users/login', null, {
+                        params: { email: storedEmail, password: storedPassword }
+                    });
+
+                    if (response.status === 200) {
+                        const userID = response.data.userID;
+                        
+                        await addLogEntry(userID, 5); // 5 corresponds to AUTO_LOGIN
+
+                        setIsAutoLogged(true);
+    
+                        navigate('/courses');
+                    }
+                } catch (error) {
+                    console.error('Automatic login failed:', error);
+                    navigate('/login');
                 }
-            })
-            .catch(error => {
-                console.error('Automatic login failed:', error);
-                navigate('/login');
-            });
-        }
-    }, [navigate]);
+            }
+        };
+        
+        attemptAutoLogin();
+    }, [navigate, isAutoLogged]); // Only depend on navigate and isAutoLogged
 
     return (
         <div className="login-container">

@@ -48,8 +48,8 @@ const Courses = () => {
         {courses.map(course => {
           // State'den detayları alır
           const details = courseDetails[course.courseID];
-          console.log(details?.mainCategoryName);
-          console.log(details?.subCategoryName);
+          //console.log(details?.mainCategoryName);
+          //console.log(details?.subCategoryName);
 
 
           return (
