@@ -1,46 +1,96 @@
-.course-details-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .course-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .course-description {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .course-category,
-  .course-instructor,
-  .course-duration,
-  .course-price {
-    font-size: 1rem;
-    margin-bottom: 5px;
-  }
-  
-  .course-rating {
-    display: flex;
-    align-items: center;
-  }
-  
-  .star {
-    font-size: 1.5rem;
-    color: #ddd;
-  }
-  
-  .star.filled {
-    color: gold;
-  }
-  
-  .rating-score {
-    margin-left: 5px;
-    font-size: 1rem;
-  }
-  
+/* Tüm sayfa için siyah arka plan */
+body {
+  background-color: #000000; /* Tamamen siyah arka plan */
+  color: #fff; /* Beyaz metin rengi */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000000; /* Koyu bir arka plan rengi */
+}
+
+.course-card {
+  border: 2px solid #d4af37; /* Altın yaldızlı kenarlık */
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  background-color: #000000; /* Koyu arka plan */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Daha belirgin gölge */
+}
+
+.course-name {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #d4af37; /* Altın rengi */
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #b3b3b3; /* Açık gri */
+}
+
+.course-category-name {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #d4af37; /* Altın rengi */
+}
+
+.course-description {
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #e0e0e0; /* Hafif gri */
+}
+
+.course-time,
+.course-price {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #b3b3b3; /* Açık gri */
+}
+
+.course-score-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;  
+  justify-content: center;
+}
+
+.star {
+  font-size: 22px;
+  color: #d4af37; /* Altın rengi */
+}
+
+.course-score {
+  font-size: 18px;
+  color: #fff; /* Beyaz */
+}

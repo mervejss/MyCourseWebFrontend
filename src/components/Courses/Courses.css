@@ -2,40 +2,66 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
+  padding: 10px;
+  justify-content: center; /* Container içindeki öğeleri ortalar */
+  min-height: 100vh; /* Minimum yüksekliği ekran yüksekliği kadar yapar */
+  background-color: #000000; /* Koyu bir arka plan rengi */
 }
 
 .course-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  width: 200px;
-  background-color: #f9f9f9;
+  border: 2px solid #d4af37; /* Altın yaldızlı kenarlık */
+  border-radius: 12px;
+  padding: 10px;
+  width: 240px;
+  background-color: #000000; /* Koyu gri arka plan */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* İçerikleri dikey olarak ortalar */
+  text-align: center; /* Metni ortalar */
+  color: #fff; /* Beyaz metin rengi */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.course-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Daha belirgin gölge */
 }
 
 .course-name {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
+  color: #d4af37; /* Altın rengi */
 }
 
 .user-name {
   font-weight: bold;
-  font-size: 10px;
-  margin-bottom: 25px;
+  font-size: 12px;
+  margin-bottom: 20px;
   font-style: italic;
+  color: #b3b3b3; /* Açık gri */
+}
+
+.course-category-name {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #d4af37; /* Altın rengi */
 }
 
 .course-description {
   font-style: italic;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #e0e0e0; /* Hafif gri */
 }
 
 .course-time,
 .course-price {
   font-size: 14px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: #b3b3b3; /* Açık gri */
 }
 
 .course-score-container {
@@ -47,34 +73,17 @@
 }
 
 .star {
-  font-size: 18px;
-  color: gray;
-}
-
-.star.filled {
-  color: gold;
+  font-size: 20px;
+  color: #d4af37; /* Altın rengi */
 }
 
 .course-score {
-  font-size: 14px; /* Same size as stars */
+  font-size: 16px;
+  color: #fff; /* Beyaz */
 }
-/* C:\VsCodeProjects\my-course-web\src\components\Courses.css */
 
 .course-link {
   text-decoration: none; /* Remove underline */
   color: inherit; /* Inherit text color */
   display: block; /* Make the link cover the entire card */
-}
-
-.course-card {
-  /* Add your existing styles for the course card */
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 8px;
-  border-radius: 8px;
-  transition: transform 0.2s; /* Smooth transition for hover effect */
-}
-
-.course-card:hover {
-  transform: scale(1.02); /* Slightly enlarge the card on hover */
 }

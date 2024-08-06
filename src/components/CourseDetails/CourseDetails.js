@@ -7,13 +7,9 @@ const CourseDetails = () => {
   const [courseDetail, setCourseDetail] = useState(null);
 
   useEffect(() => {
-    // Fetch course details by ID
     fetch(`http://localhost:8080/courses/courseDetails/${courseID}`)
       .then(response => response.json())
-      .then(data => {
-        console.log('Fetched course detail:', data); // Debugging line
-        setCourseDetail(data);
-      })
+      .then(data => setCourseDetail(data))
       .catch(error => console.error('Error fetching course details:', error));
   }, [courseID]);
 

@@ -57,7 +57,6 @@ const Courses = () => {
                     ? `${details.mainCategoryName} / ${details.subCategoryName}` 
                     : details.mainCategoryName || 'Kategori Bilgisi Belirtilmemiş'}
                 </h3>
-                <p className="course-description">{course.courseDescription || 'A beginner-friendly course on Java programming.'}</p>
                 <p className="course-time">Kurs Saati: {course.courseTotalTime || 'Belirtilmemiş'} saat</p>
                 <p className="course-price">Kurs Fiyatı: {course.coursePrice ? `${course.coursePrice} ₺` : 'Belirtilmemiş ₺'}</p>
                 <div className="course-score-container">
