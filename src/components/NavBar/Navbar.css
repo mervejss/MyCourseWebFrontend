@@ -1,9 +1,5 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #000000; /* Black background */
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -17,9 +13,7 @@
 }
 
 .logo {
-
   height: 70px;
-  
 }
 
 .nav-links {
@@ -33,25 +27,29 @@
   align-items: center;
 }
 
-.profile-link {
-  background-color: #61dafb;
-  color: #fff;
+.App-link {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 25px;
-  transition: background-color 0.3s;
+  border: 2px solid #d4af37; /* Gold border */
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.profile-link:hover {
-  background-color: #4fa3c8;
+.App-link:hover {
+  background-color: #d4af37; /* Gold background on hover */
+  color: #000000; /* Black text on hover */
+  border-color: #d4af37; /* Gold border */
 }
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #282c34;
+  background-color: #000000; /* Black background */
   border-radius: 5px;
+  border: 2px solid #d4af37; /* Gold border */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column; 
@@ -60,17 +58,20 @@
 }
 
 .dropdown-item {
-  color: #61dafb;
+  color: #ffffff; /* White text */
   text-decoration: none;
   padding: 10px;
   margin: 5px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #444; /* Dark border */
 }
 
 .dropdown-item:hover {
-  background-color: #4fa3c8;
+  background-color: #d4af37; /* Gold background on hover */
+  color: #000000; /* Black text on hover */
 }
 
 .dropdown-item:last-child {
   border-bottom: none;
 }
+
+

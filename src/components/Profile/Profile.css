@@ -1,44 +1,73 @@
 .profile-page {
-  text-align: left; /* Başlık ve içerik sola yaslanacak */
+  text-align: left;
   padding: 20px;
+  background-color: #000000; /* Siyah arka plan */
+  color: #ffffff; /* Beyaz metin */
 }
+.profile-page h1 {
+  text-align: center; /* Başlığı ortala */
+  font-size: 2.5rem; /* Font boyutu */
+  color: #d4af37; /* Altın sarısı metin rengi */
+  background-color: #000000; /* Siyah arka plan */
+  padding: 20px; /* İç boşluk */
+  margin-bottom: 30px; /* Alt margin */
+  font-style: italic; /* İtalik stil */
+  border-bottom: 2px solid #d4af37; /* Altın sarısı alt kenarlık */
+  border-radius: 8px; /* Köşe yuvarlama */
+}
+
+.profile-page h1 strong {
+  font-style: italic; /* İtalik stil */
+  color: #ffffff; /* Farklı ve uyumlu bir renk, örneğin pembe */
+}
+
+
 
 .profile-container {
   padding: 20px;
-  border: 1px solid #ddd; /* Container'a kenarlık ekleyin */
-  border-radius: 8px; /* Köşeleri yuvarlatın */
-  max-width: 600px; /* Maksimum genişlik */
-  background-color: #f9f9f9; /* Arka plan rengi */
-  margin: auto; /* Ortalamak için */
+  border: 2px solid #d4af37; /* Altın sarısı kenarlık */
+  border-radius: 8px;
+  max-width: 600px;
+  background-color: #000000; /* Siyah arka plan */
+  margin: auto;
 }
 
 .profile-container h1 {
-  color: #333;
+  color: #d4af37; /* Altın sarısı metin */
   font-size: 2rem;
-  margin-bottom: 20px; /* Başlık ile detaylar arasına boşluk */
+  margin-bottom: 20px;
+  font-style: italic; /* İtalik başlık */
 }
 
 .profile-details p {
   font-size: 1rem;
-  margin: 10px 0; /* Her detayın arasına boşluk ekleyin */
+  margin: 10px 0;
+  
 }
 
 .profile-details strong {
   display: inline-block;
-  margin-right: 10px; /* Etiket ile değer arasına boşluk */
+  margin-right: 10px;
+  color: #d4af37; /* Altın sarısı metin */
 }
+
 button {
   margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+  padding: 10px 20px;
+  background-color: #000000; /* Siyah arka plan */
+  color: #ffffff; /* Beyaz metin */
+  border: 2px solid #d4af37; /* Altın sarısı kenarlık */
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
+  text-align: center; /* Metni ortala */
+  display: inline-block; /* Düğmenin düzgün görünmesi için */
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #d4af37; /* Altın sarısı arka plan */
+  color: #000000; /* Siyah metin */
 }
 
 .edit-profile-form {
@@ -48,21 +77,26 @@ button:hover {
 
 .edit-profile-form label {
   margin: 5px 0;
+  color: #ffffff; /* Beyaz metin */
 }
 
 .edit-profile-form input {
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #d4af37; /* Altın sarısı kenarlık */
   border-radius: 4px;
+  background-color: #000000; /* Siyah arka plan */
+  color: #ffffff; /* Beyaz metin */
 }
 
 .edit-profile-form button {
   margin-top: 20px;
-  background-color: #28a745;
+  background-color: #000000; /* Siyah arka plan */
+  color: #ffffff; /* Beyaz metin */
+  border: 2px solid #d4af37; /* Altın sarısı kenarlık */
 }
 
 .edit-profile-form button:hover {
-  background-color: #218838;
+  background-color: #d4af37; /* Altın sarısı arka plan */
+  color: #000000; /* Siyah metin */
 }
-

@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Register from '../Register/Register';
-import Login from '../Login/Login';
-import Courses from '../Courses/Courses';
-import Logout from '../Logout/Logout';
-import Profile from '../Profile/Profile';
-import PurchaseHistory from '../PurchaseHistory/PurchaseHistory'; // import your components here
-import Home from '../Home/Home';
-import Log from '../Log/Log';
+
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -22,7 +15,8 @@ function Navbar() {
         <div className="logo-container">
           <Link to="/home">
             <img
-              src="https://github.com/mervejss/MyCourseWebFrontend/blob/64d6b634cd7d2c9169337bfa75117fc511bfdc15/public/logo1.png?raw=true"
+              src="/logo1.jpeg"
+              
               alt="Logo"
               className="logo"
             />

@@ -1,35 +1,40 @@
 .log-container {
-    padding: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .log-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-  }
-  
-  .log-table th,
-  .log-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .log-table th {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  .log-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .log-table tr:hover {
-    background-color: #ddd;
-  }
-  
+  padding: 20px;
+  background-color: #000000; /* Siyah arka plan */
+  color: #ffffff; /* Beyaz metin */
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #d4af37; /* Altın sarısı metin */
+}
+
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.log-table th,
+.log-table td {
+  border: 1px solid #d4af37; /* Altın sarısı kenarlık */
+  padding: 8px;
+  text-align: center;
+  color: #ffffff; /* Beyaz metin */
+  background-color: #000000; /* Siyah arka plan */
+}
+
+.log-table th {
+  background-color: #000000; /* Siyah arka plan */
+  color: #d4af37; /* Altın sarısı metin */
+}
+
+.log-table tr:nth-child(even) {
+  background-color: #333333; /* Koyu gri arka plan */
+}
+
+.log-table tr:hover {
+  background-color: #444444; /* Daha koyu gri arka plan */
+}
