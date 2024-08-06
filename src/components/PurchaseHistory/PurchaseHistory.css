@@ -1,12 +1,13 @@
-.my-courses {
+.my-orders {
   display: flex;
   flex-direction: column;
   padding: 5px;
-  margin: 5px;
+  margin: 15px;
+
 }
 
 .transaction-card {
-  background-color: #333;
+  background-color: #000000 !important; 
   color: #fff;
   border: 1px solid #d4af37; /* Gold renkli sınır */
   padding: 5px;
@@ -29,13 +30,20 @@
   font-size: 24px;
   cursor: pointer;
   color: #ccc;
-  transition: color 0.3s;
+  border: 1px solid #413c3c; /* Gold renkli sınır */
+
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
 }
 
 .status-icon.active {
-  color: gold; /* Active color for the icons */
+  color: rgb(0, 255, 21); /* Active color for the icons */
 }
 
 .status-icon + .status-icon {
   margin-left: 10px;
+}
+/* Hover state for status icons */
+.status-icon:hover {
+  background-color: rgba(122, 117, 117, 0.521); /* Pink background color on hover */
+  color: #000; /* Optional: change text color if needed */
 }

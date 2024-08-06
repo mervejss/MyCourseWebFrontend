@@ -121,12 +121,12 @@ const PurchaseHistory = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="my-courses">
+    <div className="my-orders">
       {transactions.map((transaction) => (
         <div className="transaction-card" key={transaction.purchaseOrSaleID}>
-            <h3>Kurs ID : {transaction.courseID}</h3>
             <h3>Sipariş ID : {transaction.purchaseOrSaleID}</h3>
             <h3>Kullanıcı ID : {userID}</h3>
+            <h3>Kurs ID : {transaction.courseID}</h3>
             <p>Sipariş Durumu: {getStatusText(transaction.status)}</p>
             {renderStatusIcons(transaction.purchaseOrSaleID, transaction.status)}
             <p>Ödeme Türü: {getPaymentMethodText(transaction.paymentMethod)}</p>

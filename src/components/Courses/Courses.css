@@ -73,9 +73,14 @@
 }
 
 .star {
-  font-size: 20px;
-  color: #d4af37; /* Altın rengi */
+  font-size: 20px; /* Yıldız boyutu */
+  color: #d4af37; /* Varsayılan olarak sarı */
 }
+
+.star.unfilled {
+  color: #b3b3b3; /* Yıldızlar için gri renk */
+}
+
 
 .course-score {
   font-size: 16px;
