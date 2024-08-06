@@ -121,6 +121,8 @@ const PurchaseHistory = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
+    <div className="head">
+      <h1> <strong> Siparişlerim</strong></h1>
     <div className="my-orders">
       {transactions.map((transaction) => (
         <div className="transaction-card" key={transaction.purchaseOrSaleID}>
@@ -134,6 +136,7 @@ const PurchaseHistory = () => {
             {transaction.updatedAt && <p>Sipariş Son Güncellenme Tarihi: {formatDateTime(transaction.updatedAt)}</p>}
         </div>
       ))}
+    </div>
     </div>
   );
 };

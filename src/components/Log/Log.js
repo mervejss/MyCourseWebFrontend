@@ -41,8 +41,10 @@ function Log() {
   };
 
   return (
+    <div className="head">
+       <h1> <strong> Log Kayıtlarım</strong></h1>
+  
     <div className="log-container">
-      <h2>Log Kayıtları</h2>
       <table className="log-table">
         <thead>
           <tr>
@@ -63,6 +65,7 @@ function Log() {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 }

@@ -47,3 +47,20 @@
   background-color: rgba(122, 117, 117, 0.521); /* Pink background color on hover */
   color: #000; /* Optional: change text color if needed */
 }
+
+.head h1 {
+  text-align: center; /* Başlığı ortala */
+  font-size: 2.5rem; /* Font boyutu */
+  color: #d4af37; /* Altın sarısı metin rengi */
+  background-color: #000000; /* Siyah arka plan */
+  padding: 20px; /* İç boşluk */
+  margin-bottom: 30px; /* Alt margin */
+  font-style: italic; /* İtalik stil */
+  border-bottom: 2px solid #d4af37; /* Altın sarısı alt kenarlık */
+  border-radius: 8px; /* Köşe yuvarlama */
+}
+
+.head h1 strong {
+  font-style: italic; /* İtalik stil */
+  color: #ffffff; /* Farklı ve uyumlu bir renk, örneğin pembe */
+}
