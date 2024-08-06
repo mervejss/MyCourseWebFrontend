@@ -39,7 +39,7 @@ function Navbar() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Link to="/courses" className="dropdown-item">Kurslarım</Link>
+              <Link to="/my-courses" className="dropdown-item">Kurslarım</Link>
               <Link to="/purchase-history" className="dropdown-item">Sipariş/Satış Geçmişim</Link>
               <Link to="/log" className="dropdown-item">Log Kayıtlarım</Link>
 

@@ -1,0 +1,46 @@
+.purchase-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #000000; /* Siyah arka plan */
+    color: #ffffff; /* Beyaz metin */
+    border: 2px solid #d4af37; /* Altın sarısı kenarlık */
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #d4af37; /* Altın sarısı başlık rengi */
+    font-size: 24px;
+  }
+  
+  .payment-method {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .payment-method input {
+    margin-right: 10px;
+  }
+  
+  .confirm-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #000000; /* Siyah arka plan */
+    color: #ffffff; /* Beyaz metin */
+    border: 2px solid #d4af37; /* Altın sarısı kenarlık */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .confirm-button:hover {
+    background-color: #d4af37; /* Altın sarısı arka plan */
+    color: #000000; /* Siyah metin */
+  }
+  

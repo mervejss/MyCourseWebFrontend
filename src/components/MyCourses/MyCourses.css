@@ -1,0 +1,22 @@
+.my-courses {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .transaction-card {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #d4af37; /* Gold renkli sınır */
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  .transaction-card h3 {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .transaction-card p {
+    margin: 0.25rem 0;
+  }
+  

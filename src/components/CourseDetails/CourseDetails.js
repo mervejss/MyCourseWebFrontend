@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './CourseDetails.css';
 
 const CourseDetails = () => {
   const { courseID } = useParams();
   const [courseDetail, setCourseDetail] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:8080/courses/courseDetails/${courseID}`)
@@ -12,6 +13,10 @@ const CourseDetails = () => {
       .then(data => setCourseDetail(data))
       .catch(error => console.error('Error fetching course details:', error));
   }, [courseID]);
+
+  const handlePurchaseClick = () => {
+    navigate(`/purchase/${courseID}`);
+  };
 
   if (!courseDetail) {
     return <div>Loading...</div>;
@@ -44,6 +49,7 @@ const CourseDetails = () => {
         {renderStars(courseDetail.courseScore || 0)}
         <p className="course-score">({courseDetail.courseScore || '0'})</p>
       </div>
+      <button className="purchase-button" onClick={handlePurchaseClick}>Bu Kursu Satın Al</button>
     </div>
   );
 };

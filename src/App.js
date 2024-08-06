@@ -11,6 +11,8 @@ import Profile from './components/Profile/Profile';
 import PurchaseHistory from './components/PurchaseHistory/PurchaseHistory';
 import Home from './components/Home/Home';
 import Log from './components/Log/Log';
+import CoursePurchase from './components/CoursePurchase/CoursePurchase';
+import MyCourses from './components/MyCourses/MyCourses';
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/purchase-history" element={<PurchaseHistory />} />
         <Route path="/log" element={<Log />} />
+        <Route path="/purchase/:courseID" element={<CoursePurchase />} />
+        <Route path="/my-courses" element={<MyCourses />} />
+
+
       </Routes>
     </Router>
   );
