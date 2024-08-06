@@ -13,6 +13,7 @@ import Home from './components/Home/Home';
 import Log from './components/Log/Log';
 import CoursePurchase from './components/CoursePurchase/CoursePurchase';
 import MyCourses from './components/MyCourses/MyCourses';
+import MyComments from './components/MyComments/MyComments';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Route path="/log" element={<Log />} />
         <Route path="/purchase/:courseID" element={<CoursePurchase />} />
         <Route path="/my-courses" element={<MyCourses />} />
+        <Route path="/my-comments" element={<MyComments />} />
+
 
 
       </Routes>

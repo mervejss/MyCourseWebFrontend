@@ -42,6 +42,7 @@ function Navbar() {
               <Link to="/my-courses" className="dropdown-item">Kurslarım</Link>
               <Link to="/purchase-history" className="dropdown-item">Sipariş/Satış Geçmişim</Link>
               <Link to="/log" className="dropdown-item">Log Kayıtlarım</Link>
+              <Link to="/my-comments" className="dropdown-item">Yorumlarım</Link>
 
             </div>
           )}
