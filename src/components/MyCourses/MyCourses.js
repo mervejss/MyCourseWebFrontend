@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './MyCourses.css';
 import Cookies from 'js-cookie';
+import CourseCard from '../CourseCard/CourseCard'; // CourseCard bileşenini içe aktardık
 
 const MyCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -65,31 +65,16 @@ const MyCourses = () => {
 
   return (
     <div className="head">
-      <h1> <strong> Benim Kurslarım</strong></h1>
-      <div className="courses-container">
-        
-        {courses.map(course => {
-          const details = courseDetails[course.courseID] || {};
-          return (
-            <div key={course.courseID} className="course-card">
-              <h2 className="course-name">{course.courseName || 'Kurs Adı Belirtilmemiş'}</h2>
-              <p className="user-name">{details.userFullName || 'Eğitmen Bilgisi Belirtilmemiş'}</p>
-              <h3 className="course-category-name">
-                {details.subCategoryName 
-                  ? `${details.mainCategoryName} / ${details.subCategoryName}` 
-                  : details.mainCategoryName || 'Kategori Bilgisi Belirtilmemiş'}
-              </h3>
-              <p className="course-time">Kurs Saati: {course.courseTotalTime || 'Belirtilmemiş'} saat</p>
-              <p className="course-price">Kurs Fiyatı: {course.coursePrice ? `${course.coursePrice} ₺` : 'Belirtilmemiş ₺'}</p>
-              <div className="course-score-container">
-                {renderStars(course.courseScore || 0)}
-                <p className="course-score">({course.courseScore || '0'})</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      </div>
+    <h1> <strong> Benim Kurslarım</strong></h1>
+    <div className="courses-container">
+      {courses.map(course => {
+        const details = courseDetails[course.courseID] || {};
+        return (
+          <CourseCard key={course.courseID} course={course} details={details} />
+        );
+      })}
+    </div>
+  </div>
   );
 };
 

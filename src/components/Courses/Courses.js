@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './Courses.css';
 import CategoriesNavBar from '../CategoriesNavBar/CategoriesNavBar';
 import { Route, Routes, Link } from 'react-router-dom';
 import CourseDetails from '../CourseDetails/CourseDetails';
+import CourseCard from '../CourseCard/CourseCard'; 
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -49,21 +49,7 @@ const Courses = () => {
           const details = courseDetails[course.courseID] || {};
           return (
             <Link to={`/course-details/${course.courseID}`} key={course.courseID} className="course-link">
-              <div className="course-card">
-                <h2 className="course-name">{course.courseName || 'Kurs Adı Belirtilmemiş'}</h2>
-                <p className="user-name">{details.userFullName || 'Eğitmen Bilgisi Belirtilmemiş'}</p>
-                <h3 className="course-category-name">
-                  {details.subCategoryName 
-                    ? `${details.mainCategoryName} / ${details.subCategoryName}` 
-                    : details.mainCategoryName || 'Kategori Bilgisi Belirtilmemiş'}
-                </h3>
-                <p className="course-time">Kurs Saati: {course.courseTotalTime || 'Belirtilmemiş'} saat</p>
-                <p className="course-price">Kurs Fiyatı: {course.coursePrice ? `${course.coursePrice} ₺` : 'Belirtilmemiş ₺'}</p>
-                <div className="course-score-container">
-                  {renderStars(course.courseScore || 0)}
-                  <p className="course-score">({course.courseScore || '0'})</p>
-                </div>
-              </div>
+              <CourseCard course={course} details={details} />
             </Link>
           );
         })}

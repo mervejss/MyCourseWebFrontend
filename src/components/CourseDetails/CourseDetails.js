@@ -22,7 +22,6 @@ const CourseDetails = () => {
     return <div>Loading...</div>;
   }
 
- 
   const renderStars = (courseScore) => {
     const totalStars = 5;
     const stars = [];
@@ -34,24 +33,25 @@ const CourseDetails = () => {
     return stars;
   };
 
-
   return (
-    <div className="course-card">
-      <h2 className="course-name">{courseDetail.courseName || 'Kurs Adı Belirtilmemiş'}</h2>
-      <p className="user-name">{courseDetail.userFullName || 'Eğitmen Bilgisi Belirtilmemiş'}</p>
-      <h3 className="course-category-name">
-        {courseDetail.subCategoryName 
-          ? `${courseDetail.mainCategoryName} / ${courseDetail.subCategoryName}` 
-          : courseDetail.mainCategoryName || 'Kategori Bilgisi Belirtilmemiş'}
-      </h3>
-      <p className="course-description">{courseDetail.courseDescription || 'A beginner-friendly course on Java programming.'}</p>
-      <p className="course-time">Kurs Saati: {courseDetail.courseTotalTime || 'Belirtilmemiş'} saat</p>
-      <p className="course-price">Kurs Fiyatı: {courseDetail.coursePrice ? `${courseDetail.coursePrice} ₺` : 'Belirtilmemiş ₺'}</p>
-      <div className="course-score-container">
-        {renderStars(courseDetail.courseScore || 0)}
-        <p className="course-score">({courseDetail.courseScore || '0'})</p>
+    <div className="course-details-container">
+      <div className="course-card">
+        <h2 className="course-name">{courseDetail.courseName || 'Kurs Adı Belirtilmemiş'}</h2>
+        <p className="user-name">{courseDetail.userFullName || 'Eğitmen Bilgisi Belirtilmemiş'}</p>
+        <h3 className="course-category-name">
+          {courseDetail.subCategoryName 
+            ? `${courseDetail.mainCategoryName} / ${courseDetail.subCategoryName}` 
+            : courseDetail.mainCategoryName || 'Kategori Bilgisi Belirtilmemiş'}
+        </h3>
+        <p className="course-description">{courseDetail.courseDescription || 'A beginner-friendly course on Java programming.'}</p>
+        <p className="course-time">Kurs Saati: {courseDetail.courseTotalTime || 'Belirtilmemiş'} saat</p>
+        <p className="course-price">Kurs Fiyatı: {courseDetail.coursePrice ? `${courseDetail.coursePrice} ₺` : 'Belirtilmemiş ₺'}</p>
+        <div className="course-score-container">
+          {renderStars(courseDetail.courseScore || 0)}
+          <p className="course-score">({courseDetail.courseScore || '0'})</p>
+        </div>
+        <button className="purchase-button" onClick={handlePurchaseClick}>Bu Kursu Satın Al</button>
       </div>
-      <button className="purchase-button" onClick={handlePurchaseClick}>Bu Kursu Satın Al</button>
     </div>
   );
 };

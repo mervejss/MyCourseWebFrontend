@@ -1,0 +1,88 @@
+/*C:\VsCodeProjects\my-course-web\src\components\CourseCard\CourseCard.css*/
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reduced gap to create the overlapping effect */
+    padding: 10px;
+    justify-content: center; /* Center the cards in the container */
+    min-height: 100vh; /* Minimum height as the screen height */
+    background-color: #000000; /* Dark background */
+  }
+  
+  .course-card {
+    border: 2px solid #d4af37; /* Gold border */
+    border-radius: 12px;
+    width: 240px;
+    height: 370px;
+    background-color: #000000; /* Black background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* White text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+    margin: -10px;
+  }
+  
+  .course-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More prominent shadow */
+  }
+  
+  .course-name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #d4af37; /* Gold color */
+  }
+  
+  .user-name {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #b3b3b3; /* Light gray */
+  }
+  
+  .course-category-name {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #d4af37; /* Gold color */
+  }
+  
+  .course-time,
+  .course-price {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #b3b3b3; /* Light gray */
+  }
+  
+  .course-score-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between stars and score */
+    margin-top: 10px;
+    justify-content: center; /* Center stars and score */
+  }
+  
+  .star {
+    font-size: 20px; /* Star size */
+    color: #d4af37; /* Gold color */
+  }
+  
+  .star.unfilled {
+    color: #b3b3b3; /* Gray for unfilled stars */
+  }
+  
+  .course-score {
+    font-size: 16px;
+    color: #fff; /* White color */
+  }
+  
+  .course-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link cover the entire card */
+  }
+  
