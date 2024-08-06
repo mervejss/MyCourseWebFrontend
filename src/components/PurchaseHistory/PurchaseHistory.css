@@ -10,8 +10,8 @@
   background-color: #000000 !important; 
   color: #fff;
   border: 1px solid #d4af37; /* Gold renkli sınır */
-  padding: 5px;
-  margin: 5px;
+  padding: 20px;
+  margin: 10px;
   border-radius: 5px;
   position: relative;
 }

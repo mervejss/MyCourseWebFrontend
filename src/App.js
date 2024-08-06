@@ -14,6 +14,7 @@ import Log from './components/Log/Log';
 import CoursePurchase from './components/CoursePurchase/CoursePurchase';
 import MyCourses from './components/MyCourses/MyCourses';
 import MyComments from './components/MyComments/MyComments';
+import MyCourseDetails from './components/MyCourseDetails/MyCourseDetails';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/purchase/:courseID" element={<CoursePurchase />} />
         <Route path="/my-courses" element={<MyCourses />} />
         <Route path="/my-comments" element={<MyComments />} />
+        <Route path="/my-course-details/:courseID" element={<MyCourseDetails />} />
 
 
 
