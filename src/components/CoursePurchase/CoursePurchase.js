@@ -56,8 +56,7 @@ const CoursePurchase = () => {
         console.log('Sipariş oluşturuldu:', data);
         addLogEntry(userID, 2); // 0 corresponds to LOGIN
 
-        // Sipariş başarılı ise başka bir sayfaya yönlendirme yapılabilir
-        navigate('/courses'); // Örneğin, bir başarı sayfasına yönlendirme
+        navigate('/courses'); 
       } else {
         console.error('Sipariş oluşturulamadı');
       }

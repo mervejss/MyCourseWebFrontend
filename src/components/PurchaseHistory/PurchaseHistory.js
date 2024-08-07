@@ -3,7 +3,7 @@ import axios from 'axios';
 import './PurchaseHistory.css';
 import Cookies from 'js-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReceipt, faCheck, faBox, faClock, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faReceipt, faCheck, faBox, faClock, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 // Tarih formatlama fonksiyonu
 const formatDateTime = (dateString) => {
@@ -40,7 +40,7 @@ const PurchaseHistory = () => {
   
     fetchTransactions();
   }, [userID]);
-  
+
   const getStatusText = (status) => {
     switch (status) {
       case 0:
@@ -88,7 +88,7 @@ const PurchaseHistory = () => {
         return 'Unknown (Bilinmiyor)';
     }
   };
-  
+
   const handleStatusClick = async (transactionID, newStatus) => {
     console.log(`Updating transaction ${transactionID} to status ${newStatus}`); // Debugging
     try {
@@ -104,18 +104,42 @@ const PurchaseHistory = () => {
       console.error("Error updating transaction status", error);
     }
   };
-  
+
+  const handleCancelOrder = async (transactionID) => {
+    try {
+      await axios.delete(`http://localhost:8080/transactions/${transactionID}`);
+      // Fetch the updated transactions
+      const response = await axios.get(`http://localhost:8080/transactions/user`, {
+        params: { userID }
+      });
+      setTransactions(response.data);
+    } catch (error) {
+      console.error("Error canceling order", error);
+    }
+  };
+
   const renderStatusIcons = (transactionID, currentStatus) => {
-    return statusIcons.map((status, index) => (
-      <button
-        key={status.id}
-        className={`status-icon ${index <= currentStatus ? 'active' : ''}`}
-        title={status.label}
-        onClick={() => handleStatusClick(transactionID, status.id)}
-      >
-        <FontAwesomeIcon icon={status.icon} />
-      </button>
-    ));
+    return (
+      <>
+        {statusIcons.map((status, index) => (
+          <button
+            key={status.id}
+            className={`status-icon ${index <= currentStatus ? 'active' : ''}`}
+            title={status.label}
+            onClick={() => handleStatusClick(transactionID, status.id)}
+          >
+            <FontAwesomeIcon icon={status.icon} />
+          </button>
+        ))}
+        <button
+          className="status-icon"
+          title="Siparişi İptal Et"
+          onClick={() => handleCancelOrder(transactionID)}
+        >
+          <FontAwesomeIcon icon={faTimesCircle} />
+        </button>
+      </>
+    );
   };
 
   if (loading) return <p>Loading...</p>;
