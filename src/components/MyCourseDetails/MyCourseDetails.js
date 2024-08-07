@@ -50,8 +50,16 @@ const MyCourseDetails = () => {
 
         {location.state?.fromMyCourses ? (
           <>
-            <button className="review-button">Bu Kursa Yorum Yap</button>
-            <button className="rate-button">Bu Kursa Puanlama Yap</button>
+            <button 
+              className="review-button" 
+              onClick={() => navigate(`/addCourseComment/${courseID}`)}>
+              Bu Kursa Yorum Yap
+            </button>
+            <button 
+              className="rate-button" 
+              onClick={() => navigate(`/addCourseScore/${courseID}`)}>
+              Bu Kursa Puanlama Yap
+            </button>
           </>
         ) : (
           <button className="purchase-button" onClick={() => navigate(`/purchase/${courseID}`)}>

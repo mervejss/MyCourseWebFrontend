@@ -1,0 +1,36 @@
+.comment-container {
+  background-color: #000; /* Siyah arka plan */
+  color: #fff; /* Beyaz yazı */
+  border: 2px solid #ffd700; /* Altın sarısı çerçeve */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.comment-textarea {
+  width: 100%;
+  height: 150px;
+  background-color: #333; /* Koyu gri arka plan */
+  color: #fff; /* Beyaz yazı */
+  border: 2px solid #ffd700; /* Altın sarısı çerçeve */
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: none; /* Kullanıcının textarea boyutunu değiştirmesini engeller */
+}
+
+.submit-button {
+  background-color: #ffd700; /* Altın sarısı arka plan */
+  color: #000; /* Siyah yazı */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #e5c100; /* Hover efekti için koyu sarı */
+}

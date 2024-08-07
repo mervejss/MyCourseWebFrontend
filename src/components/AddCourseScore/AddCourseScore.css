@@ -1,0 +1,40 @@
+/* C:\VsCodeProjects\my-course-web\src\components\AddCourseScore\AddCourseScore.css */
+.score-container {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border: 2px solid gold;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .stars {
+    margin: 20px 0;
+  }
+  
+  .star {
+    font-size: 2em;
+    cursor: pointer;
+    color: grey;
+    transition: color 0.3s ease;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .submit-button {
+    background-color: black;
+    color: white;
+    border: 2px solid gold;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: gold;
+    color: black;
+  }
+  
