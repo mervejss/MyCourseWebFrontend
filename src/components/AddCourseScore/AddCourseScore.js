@@ -55,7 +55,7 @@ const AddCourseScore = () => {
       .then(data => {
         console.log("Comment saved or updated:", data);
         // Başarıyla güncelleme sonrası yapılacak işlemler
-        navigate('/course-details'); // Yönlendirme örneği (Kurs detaylarına dön)
+        navigate('/my-courses'); // Yönlendirme örneği (Kurs detaylarına dön)
       })
       .catch(error => console.error('Error saving or updating comment:', error));
   };

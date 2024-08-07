@@ -1,0 +1,58 @@
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #000000; /* Black background */
+    min-height: 100vh; /* Minimum height to fit the screen */
+  }
+  
+  .comment-card {
+    border: 2px solid #d4af37; /* Gold border */
+    border-radius: 12px;
+    padding: 15px;
+    margin: 80px;
+    background-color: #1e1e1e; /* Slightly lighter background for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* White text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+  }
+  
+  .comment-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+  }
+  
+  .comment-description {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #e0e0e0; /* Light grey text for description */
+  }
+  
+  .comment-score-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between stars and score */
+    margin-top: 10px;
+    justify-content: center; /* Center stars and score */
+  }
+  
+  .star {
+    font-size: 24px; /* Larger star size */
+    color: #d4af37; /* Gold color for filled stars */
+  }
+  
+  .star.unfilled {
+    color: #b3b3b3; /* Grey color for unfilled stars */
+  }
+  
+  .comment-score {
+    font-size: 18px;
+    color: #fff; /* White text color for the score */
+    margin-left: 5px; /* Space between stars and score */
+  }
+  
