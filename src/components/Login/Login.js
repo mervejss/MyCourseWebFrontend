@@ -90,7 +90,6 @@ function Login() {
             </form>
         </div>
     );
-    
 }
 
 export default Login;

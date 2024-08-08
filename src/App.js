@@ -17,6 +17,7 @@ import MyComments from './components/MyComments/MyComments';
 import MyCourseDetails from './components/MyCourseDetails/MyCourseDetails';
 import AddCourseComment from './components/AddCourseComment/AddCourseComment';
 import AddCourseScore from './components/AddCourseScore/AddCourseScore';
+import MySaleCourses from './components/MySaleCourses/MySaleCourses';
 
 function App() {
   return (
@@ -36,10 +37,11 @@ function App() {
         <Route path="/my-courses" element={<MyCourses />} />
         <Route path="/my-comments" element={<MyComments />} />
         <Route path="/my-course-details/:courseID" element={<MyCourseDetails />} />
-        <Route path="/addCourseComment/:courseID" element={<AddCourseComment />} /> {/* Yeni eklendi */}
-        <Route path="/addCourseScore/:courseID" element={<AddCourseScore />} /> {/* Yeni eklendi */}
-      
+        <Route path="/addCourseComment/:courseID" element={<AddCourseComment />} /> 
+        <Route path="/addCourseScore/:courseID" element={<AddCourseScore />} /> 
+        <Route path="/my-sale-courses" element={<MySaleCourses  />} />
 
+        
 
 
 
