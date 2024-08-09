@@ -15,6 +15,10 @@ const Profile = () => {
       axios.get(`http://localhost:8080/users/${userID}/profile`)
         .then(response => {
           setUser(response.data);
+          // Rol tipini cookies'e kaydet
+          if (response.data.roleType) {
+            Cookies.set('userRoleType', response.data.roleType, { expires: 7 }); // Çerez süresi 7 gün olarak ayarlanıyor
+          }
         })
         .catch(error => console.error('Error fetching user:', error));
     }

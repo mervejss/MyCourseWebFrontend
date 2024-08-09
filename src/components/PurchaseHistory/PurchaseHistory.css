@@ -30,9 +30,8 @@
   font-size: 24px;
   cursor: pointer;
   color: #ccc;
-  border: 1px solid #413c3c; /* Gold renkli sınır */
-
-  transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+  border: 1px solid #413c3c; 
+  transition: color 0.3s, background-color 0.3s; 
 }
 
 .status-icon.active {

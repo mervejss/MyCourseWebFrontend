@@ -1,0 +1,64 @@
+.my-sales {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 15px;
+}
+
+.sale-card {
+  background-color: #000000 !important; 
+  color: #fff;
+  border: 1px solid #d4af37; /* Gold renkli sınır */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.sale-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.sale-card p {
+  margin: 0.25rem 0;
+}
+
+.status-icon {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  border: 1px solid #413c3c; /* Gold renkli sınır */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+}
+
+.status-icon.active {
+  color: rgb(0, 255, 21); /* Active color for the icons */
+}
+
+.status-icon + .status-icon {
+  margin-left: 10px;
+}
+
+.status-icon:hover {
+  background-color: rgba(122, 117, 117, 0.521); /* Hover background color */
+  color: #000;
+}
+
+.head h1 {
+  text-align: center; /* Başlığı ortala */
+  font-size: 2.5rem; /* Font boyutu */
+  color: #d4af37; /* Altın sarısı metin rengi */
+  background-color: #000000; /* Siyah arka plan */
+  padding: 20px; /* İç boşluk */
+  margin-bottom: 30px; /* Alt margin */
+  font-style: italic; /* İtalik stil */
+  border-bottom: 2px solid #d4af37; /* Altın sarısı alt kenarlık */
+  border-radius: 8px; /* Köşe yuvarlama */
+}
+
+.head h1 strong {
+  font-style: italic;
+  color: #ffffff;
+}
