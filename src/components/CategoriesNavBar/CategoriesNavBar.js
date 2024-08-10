@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CategoriesNavBar.css';
 
-const CategoriesNavBar = () => {
+const CategoriesNavBar = ({ onCategoryClick }) => {
     const [mainCategories, setMainCategories] = useState([]);
     const [subCategories, setSubCategories] = useState({});
     const [activeCategory, setActiveCategory] = useState(null);
@@ -56,12 +56,21 @@ const CategoriesNavBar = () => {
                             fetchSubCategories(category.courseCategoryID);
                         }}
                         onMouseLeave={() => setActiveCategory(null)}
+                        onClick={() => onCategoryClick(category.courseCategoryID)}  // Ana kategori tıklama işlemi
                     >
                         {category.courseCategoryName}
                         {activeCategory === category.courseCategoryID && subCategories[category.courseCategoryID] && (
                             <ul className="sub-categories" style={{ display: 'block' }}>
                                 {subCategories[category.courseCategoryID].map(subCategory => (
-                                    <li key={subCategory.courseCategoryID}>{subCategory.courseCategoryName}</li>
+                                    <li 
+                                        key={subCategory.courseCategoryID}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            onCategoryClick(subCategory.courseCategoryID);  // Alt kategori tıklama işlemi
+                                        }}
+                                    >
+                                        {subCategory.courseCategoryName}
+                                    </li>
                                 ))}
                             </ul>
                         )}

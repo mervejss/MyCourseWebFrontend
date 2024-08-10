@@ -6,18 +6,30 @@ import CourseCard from '../CourseCard/CourseCard';
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
+  const [courseCategories, setCourseCategories] = useState([]); // Kategori state'i
   const [courseDetails, setCourseDetails] = useState({});
+  const [filteredCourses, setFilteredCourses] = useState([]);
 
   useEffect(() => {
-    // Fetch all courses
+    // Tüm kursları çekme
     fetch('http://localhost:8080/courses')
       .then(response => response.json())
       .then(data => {
         setCourses(data);
-        // Fetch all course details
+        setFilteredCourses(data); 
         data.forEach(course => fetchCourseDetails(course.courseID));
       })
-      .catch(error => console.error('Error fetching courses:', error));
+      .catch(error => console.error('Kurslar yüklenirken hata oluştu:', error));
+  }, []);
+
+  useEffect(() => {
+    // Tüm kategorileri çekme
+    fetch('http://localhost:8080/courseCategories')
+      .then(response => response.json())
+      .then(data => {
+        setCourseCategories(data);
+      })
+      .catch(error => console.error('Kategoriler yüklenirken hata oluştu:', error));
   }, []);
 
   const fetchCourseDetails = (courseId) => {
@@ -27,7 +39,28 @@ const Courses = () => {
         ...prevDetails,
         [courseId]: data
       })))
-      .catch(error => console.error('Error fetching course details:', error));
+      .catch(error => console.error('Kurs detayları yüklenirken hata oluştu:', error));
+  };
+
+  const handleCategoryClick = (categoryId) => {
+    const filtered = courses.filter(course => {
+      if (course.courseCategoryID === categoryId) {
+        return true;
+      }
+      
+      if (course.parentCategoryID === categoryId) {
+        return true;
+      }
+
+      const courseCategory = courseCategories.find(cat => cat.courseCategoryID === course.courseCategoryID);
+      if (courseCategory && courseCategory.parentCategoryID === categoryId) {
+        return true;
+      }
+
+      return false;
+    });
+  
+    setFilteredCourses(filtered);
   };
 
   const renderStars = (courseScore) => {
@@ -43,16 +76,20 @@ const Courses = () => {
 
   return (
     <div>
-      <CategoriesNavBar />
+      <CategoriesNavBar onCategoryClick={handleCategoryClick} />
       <div className="courses-container">
-        {courses.map(course => {
-          const details = courseDetails[course.courseID] || {};
-          return (
-            <Link to={`/course-details/${course.courseID}`} key={course.courseID} className="course-link">
-              <CourseCard course={course} details={details} />
-            </Link>
-          );
-        })}
+        {Array.isArray(filteredCourses) && filteredCourses.length > 0 ? (
+          filteredCourses.map(course => {
+            const details = courseDetails[course.courseID] || {};
+            return (
+              <Link to={`/course-details/${course.courseID}`} key={course.courseID} className="course-link">
+                <CourseCard course={course} details={details} />
+              </Link>
+            );
+          })
+        ) : (
+          <p>Kurs bulunamadı.</p>
+        )}
       </div>
       <Routes>
         <Route path="/course-details/:courseID" element={<CourseDetails />} />
