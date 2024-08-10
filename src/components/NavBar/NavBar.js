@@ -45,7 +45,6 @@ function Navbar() {
               <Link to="/my-comments" className="dropdown-item">Yorumlarım</Link>
               <Link to="/my-sale-courses" className="dropdown-item">Satış Geçmişim</Link>
               
-
             </div>
           )}
         </div>
