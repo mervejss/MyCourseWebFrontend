@@ -56,3 +56,76 @@
     margin-left: 5px; /* Space between stars and score */
   }
   
+
+  .comment-card {
+    position: relative;
+    
+    /* Diğer mevcut stiller */
+  }
+  
+  .comment-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    
+  }
+  
+  .edit-icon, .delete-icon {
+    cursor: pointer;
+    color: #d4af37;
+    font-size: larger;
+  }
+  
+  .edit-icon:hover, .delete-icon:hover {
+    color: #fff;
+  }
+  
+  .comment-timestamps {
+    margin-top: 10px;
+    text-align: right;
+    align-self: flex-end;
+    color: #6e6c6c; /* Light grey text for timestamps */
+    font-size: 12px; /* Smaller font size for timestamps */
+  }
+
+
+  .edit-textarea {
+    width: 1000px;
+    height: 300px; /* Metin alanı boyutunu büyütme */
+    background-color: #000000;
+    border: 2px solid #ffd700 !important; /* Altın sarısı çerçeve */
+
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    resize: vertical; /* Kullanıcıların metin alanını dikey olarak yeniden boyutlandırmasına izin ver */
+}
+
+.edit-score-container {
+    margin: 10px 0;
+    border: 2px solid #ffd700 !important; /* Altın sarısı çerçeve */
+
+}
+
+.save-button, .cancel-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #ffd700 !important; /* Altın sarısı çerçeve */
+
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: #000000;
+    color: #ffd700;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover, .cancel-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
