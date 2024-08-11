@@ -1,0 +1,60 @@
+.sort-menu {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  margin: 20px;
+  padding: 5px;
+}
+
+.sort-select {
+  background-color: #000000; /* Black background to match theme */
+  color: #d4af37; /* Golden text color */
+  border: 2px solid #d4af37; /* Golden border */
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.sort-select:hover {
+  background-color: #d4af37; /* Golden background on hover */
+  color: #000000; /* Black text on hover */
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #000000; /* Black background for dropdown */
+  border: 2px solid #d4af37; /* Golden border */
+  border-radius: 8px;
+  width: 100%;
+  z-index: 1000; /* Ensure dropdown is on top */
+}
+
+.dropdown-menu.open {
+  display: block; /* Show dropdown when open */
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  color: #ffffff; /* White text color */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  font-size: 15px;
+  align-items: center; /* Vertically align icons and text */
+}
+
+.icon {
+  margin-right: 7px; /* Space between icon and text */
+  
+}
+
+.dropdown-item:hover {
+  background-color: #d4af37; /* Golden background on hover */
+  color: #000000; /* Black text on hover */
+}

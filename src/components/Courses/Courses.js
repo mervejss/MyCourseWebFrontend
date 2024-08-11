@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import CategoriesNavBar from '../CategoriesNavBar/CategoriesNavBar';
+import SortMenu from '../SortMenu/SortMenu';
 import { Route, Routes, Link } from 'react-router-dom';
 import CourseDetails from '../CourseDetails/CourseDetails';
 import CourseCard from '../CourseCard/CourseCard'; 
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
-  const [courseCategories, setCourseCategories] = useState([]); // Kategori state'i
+  const [courseCategories, setCourseCategories] = useState([]);
   const [courseDetails, setCourseDetails] = useState({});
   const [filteredCourses, setFilteredCourses] = useState([]);
 
   useEffect(() => {
-    // Tüm kursları çekme
     fetch('http://localhost:8080/courses')
       .then(response => response.json())
       .then(data => {
@@ -23,7 +23,6 @@ const Courses = () => {
   }, []);
 
   useEffect(() => {
-    // Tüm kategorileri çekme
     fetch('http://localhost:8080/courseCategories')
       .then(response => response.json())
       .then(data => {
@@ -63,20 +62,45 @@ const Courses = () => {
     setFilteredCourses(filtered);
   };
 
-  const renderStars = (courseScore) => {
-    const totalStars = 5;
-    const stars = [];
-    for (let i = 1; i <= totalStars; i++) {
-      stars.push(
-        <span key={i} className={`star ${i <= courseScore ? 'filled' : 'unfilled'}`}>★</span>
-      );
+  const handleSortChange = (sortType) => {
+    let sortedCourses;
+    switch (sortType) {
+      case 'highestScore':
+        sortedCourses = [...filteredCourses].sort((a, b) => b.courseScore - a.courseScore);
+        break;
+      case 'lowestScore':
+        sortedCourses = [...filteredCourses].sort((a, b) => a.courseScore - b.courseScore);
+        break;
+      case 'highestPrice':
+        sortedCourses = [...filteredCourses].sort((a, b) => b.coursePrice - a.coursePrice);
+        break;
+      case 'lowestPrice':
+        sortedCourses = [...filteredCourses].sort((a, b) => a.coursePrice - b.coursePrice);
+        break;
+      case 'highestTime':
+        sortedCourses = [...filteredCourses].sort((a, b) => b.courseTotalTime - a.courseTotalTime);
+        break;
+      case 'lowestTime':
+        sortedCourses = [...filteredCourses].sort((a, b) => a.courseTotalTime - b.courseTotalTime);
+        break;
+      case 'newest':
+        sortedCourses = [...filteredCourses].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        break;
+      case 'oldest':
+        sortedCourses = [...filteredCourses].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        break;
+      default:
+        sortedCourses = filteredCourses;
     }
-    return stars;
+    setFilteredCourses(sortedCourses);
   };
 
   return (
     <div>
       <CategoriesNavBar onCategoryClick={handleCategoryClick} />
+      <div className="header">
+        <SortMenu onSortChange={handleSortChange} />
+      </div>
       <div className="courses-container">
         {Array.isArray(filteredCourses) && filteredCourses.length > 0 ? (
           filteredCourses.map(course => {
