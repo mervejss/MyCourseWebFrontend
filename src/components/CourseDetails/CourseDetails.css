@@ -11,7 +11,7 @@ body {
 .course-details-container {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 20px;
   background-color: #000000;
 }
@@ -21,11 +21,12 @@ body {
   border-radius: 12px;
   padding: 20px;
   max-width: 800px;
+  height: 400px !important;
+
   background-color: #000000;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  text-align: left;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -61,7 +62,6 @@ body {
   font-style: italic;
   font-size: 16px;
   margin-bottom: 20px;
-  text-align: center;
   color: #e0e0e0;
 }
 
@@ -77,11 +77,13 @@ body {
   align-items: center;
   gap: 8px;
   margin-top: 15px;  
-  justify-content: center;
 }
 
 .star {
   font-size: 20px;
+}
+
+.star.filled {
   color: #d4af37;
 }
 
@@ -93,3 +95,67 @@ body {
   font-size: 18px;
   color: #fff;
 }
+
+.comments-section {
+  margin-top: 40px;
+}
+
+.comment-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #000000 !important;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.user-info {
+  border: 1px solid #d4af37;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #000000;
+  text-align: left;
+  align-self: flex-start; /* Kutuyu sola yaslamak için */
+  color: #d4af37 !important;
+
+}
+
+.user-info p {
+  margin: 5px 0;
+}
+
+.comment-score-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-score {
+  font-size: 25px !important;
+
+  margin-left: 8px;
+}
+
+.comment-date {
+  text-align: right;
+  width: 100%;
+  font-size: 14px;
+  color: #666;
+}
+
+.comment-description {
+  font-style: italic;
+  margin: 10px;
+  margin-top: 30px;
+
+}
+
+
+.comments-container {
+  margin-top: 20px;
+}
+

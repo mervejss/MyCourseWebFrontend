@@ -55,8 +55,11 @@
   flex-direction: column; 
   min-width: 200px;
   z-index: 1000;
+  
 }
-
+.nav-profile:hover .dropdown-menu {
+  display: block; /* Üzerine gelindiğinde menüyü göster */
+}
 .dropdown-item {
   color: #ffffff; /* White text */
   text-decoration: none;
