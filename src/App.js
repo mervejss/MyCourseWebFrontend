@@ -41,7 +41,7 @@ function App() {
         <Route path="/addCourseScore/:courseID" element={<AddCourseScore />} /> 
         <Route path="/my-sale-courses" element={<MySaleCourses  />} />
 
-        
+
 
 
 
