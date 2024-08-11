@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CoursePurchase.css';
 import Cookies from 'js-cookie';
 import { useParams, useNavigate } from 'react-router-dom';
-import { addLogEntry } from '../Log/LogUtils'; 
+import { addLogEntry } from '../Log/LogUtils';
 
 const CoursePurchase = () => {
   const { courseID } = useParams(); // Kurs ID'sini URL'den al
   const navigate = useNavigate();
   const userID = Cookies.get('userID');
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null);
+  const [courseOwnerID, setCourseOwnerID] = useState(null);
 
   const paymentMethods = [
     { id: 0, label: 'Credit Card (Kredi Kartı)' },
@@ -22,7 +23,21 @@ const CoursePurchase = () => {
     { id: 8, label: 'Prepaid Card (Ön Ödemeli Kart)' },
     { id: 9, label: 'Check (Çek)' },
     { id: 10, label: 'Gift Card (Hediye Kartı)' }
-];
+  ];
+
+  useEffect(() => {
+    const fetchCourseOwnerID = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/courses/user/${courseID}`);
+        const data = await response.json();
+        setCourseOwnerID(data); // Kurs sahibinin userID'sini ayarla
+      } catch (error) {
+        console.error('Kurs sahibinin userID\'si alınırken hata oluştu:', error);
+      }
+    };
+
+    fetchCourseOwnerID();
+  }, [courseID]);
 
   const handlePaymentMethodChange = (event) => {
     setSelectedPaymentMethod(parseInt(event.target.value));
@@ -54,7 +69,14 @@ const CoursePurchase = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Sipariş oluşturuldu:', data);
-        addLogEntry(userID, 2); // 0 corresponds to LOGIN
+        addLogEntry(userID, 2); // PURCHASE
+
+        // courseOwnerID değişkenini kontrol edip, log kaydı ekliyoruz
+        if (courseOwnerID) {
+          addLogEntry(courseOwnerID, 3); // SALE
+        } else {
+          console.error('Kurs sahibi ID alınamadı.');
+        }
 
         navigate('/courses'); 
       } else {
