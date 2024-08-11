@@ -3,13 +3,16 @@ import CategoriesNavBar from '../CategoriesNavBar/CategoriesNavBar';
 import SortMenu from '../SortMenu/SortMenu';
 import { Route, Routes, Link } from 'react-router-dom';
 import CourseDetails from '../CourseDetails/CourseDetails';
-import CourseCard from '../CourseCard/CourseCard'; 
+import CourseCard from '../CourseCard/CourseCard';
+import { FaSearch } from 'react-icons/fa'; // Importing search icon
+import './Courses.css'; // CSS dosyanızın doğru yolu
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [courseCategories, setCourseCategories] = useState([]);
   const [courseDetails, setCourseDetails] = useState({});
   const [filteredCourses, setFilteredCourses] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetch('http://localhost:8080/courses')
@@ -95,11 +98,33 @@ const Courses = () => {
     setFilteredCourses(sortedCourses);
   };
 
+  const handleSearchChange = (event) => {
+    const searchValue = event.target.value.toLowerCase();
+    setSearchTerm(searchValue);
+
+    const filtered = courses.filter(course =>
+      course.courseName.toLowerCase().includes(searchValue)
+    );
+    setFilteredCourses(filtered);
+  };
+
   return (
     <div>
       <CategoriesNavBar onCategoryClick={handleCategoryClick} />
       <div className="header">
+        <div className="search-container">
+          <FaSearch className="search-icon" />
+          <input
+            type="text"
+            placeholder="Kurs adı ile ara..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="search-input"
+          />
+        </div>
         <SortMenu onSortChange={handleSortChange} />
+
+
       </div>
       <div className="courses-container">
         {Array.isArray(filteredCourses) && filteredCourses.length > 0 ? (

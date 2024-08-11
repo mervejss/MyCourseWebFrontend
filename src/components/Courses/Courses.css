@@ -92,4 +92,38 @@
     color: inherit; /* Inherit text color */
     display: block; /* Make the link cover the entire card */
   }
+ 
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #000000; /* Header background color */
+  }
+  
+  .search-container {
+    position: relative;
+    margin: 20px;
+    background-color: #000000; /* Input background color */
+    width: 1620px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px; /* Space for the search icon */
+    border-radius: 8px;
+    border: 2px solid #d4af37; /* Border color matching the theme */
+    background-color: #000000; /* Input background color */
+    color: #ffffff; /* Input text color */
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff; /* Search icon color */
+  }
   

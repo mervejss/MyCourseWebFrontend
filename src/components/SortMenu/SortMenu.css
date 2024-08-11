@@ -7,7 +7,7 @@
 
 .sort-select {
   background-color: #000000; /* Black background to match theme */
-  color: #d4af37; /* Golden text color */
+  color: #ffffff; /* Golden text color */
   border: 2px solid #d4af37; /* Golden border */
   border-radius: 8px;
   padding: 8px 12px;
@@ -50,8 +50,12 @@
 }
 
 .icon {
-  margin-right: 7px; /* Space between icon and text */
-  
+  margin-right: 8px;
+}
+.sort-icon {
+  font-size: 15px;
+  margin-right: 8px;
+  color: #ffffff; /* İkon rengi */
 }
 
 .dropdown-item:hover {

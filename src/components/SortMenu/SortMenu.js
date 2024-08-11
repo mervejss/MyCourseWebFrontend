@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SortMenu.css'; // Import CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faDollarSign, faClock, faCalendar, faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faDollarSign, faClock, faCalendar, faArrowUp, faArrowDown, faSort } from '@fortawesome/free-solid-svg-icons';
 
 const SortMenu = ({ onSortChange }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,8 +27,8 @@ const SortMenu = ({ onSortChange }) => {
   return (
     <div className="sort-menu">
       <div className="sort-select" onClick={toggleDropdown}>
-        Sıralama Seçin
-        <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
+      <FontAwesomeIcon icon={faSort} className="sort-icon" />
+      Sıralama Seçin        <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
           {options.map(option => (
             <div
               key={option.value}
