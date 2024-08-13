@@ -18,7 +18,6 @@ const statusIcons = [
   { id: 3, icon: faClock, label: 'Sipariş Bekleniyor' },
   { id: 4, icon: faCheckCircle, label: 'Sipariş Tamamlandı' },
 ];
-
 const getStatusText = (status) => {
   switch (status) {
     case 0:
