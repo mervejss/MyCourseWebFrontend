@@ -113,7 +113,7 @@ const MySaleCourses = () => {
       console.error("Error updating transaction status", error);
     }
   };
-  
+
  const handleCancelOrder = async (transactionID) => {
     try {
       await axios.delete(`http://localhost:8080/transactions/${transactionID}`);
