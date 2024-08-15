@@ -18,6 +18,7 @@ import MyCourseDetails from './components/MyCourseDetails/MyCourseDetails';
 import AddCourseComment from './components/AddCourseComment/AddCourseComment';
 import AddCourseScore from './components/AddCourseScore/AddCourseScore';
 import MySaleCourses from './components/MySaleCourses/MySaleCourses';
+import SaleHistory from './components/SaleHistory/SaleHistory';
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
         <Route path="/addCourseComment/:courseID" element={<AddCourseComment />} /> 
         <Route path="/addCourseScore/:courseID" element={<AddCourseScore />} /> 
         <Route path="/my-sale-courses" element={<MySaleCourses  />} />
+        <Route path="/sale-history" element={<SaleHistory  />} />
+
 
         
 

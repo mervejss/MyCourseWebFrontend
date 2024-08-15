@@ -40,11 +40,15 @@ function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <Link to="/my-courses" className="dropdown-item">Kurslarım</Link>
+              <Link to="/my-sale-courses" className="dropdown-item">Satıştaki Kurslarım</Link>
               <Link to="/purchase-history" className="dropdown-item">Sipariş Geçmişim</Link>
-              <Link to="/log" className="dropdown-item">Log Kayıtlarım</Link>
+
+              <Link to="/sale-history" className="dropdown-item">Satış Geçmişim</Link>
+
               <Link to="/my-comments" className="dropdown-item">Yorumlarım</Link>
-              <Link to="/my-sale-courses" className="dropdown-item">Satış Geçmişim</Link>
-              
+
+              <Link to="/log" className="dropdown-item">Log Kayıtlarım</Link>
+
             </div>
           )}
         </div>
