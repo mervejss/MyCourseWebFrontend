@@ -1,0 +1,78 @@
+.edit-course-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #d4af37; /* Gold border */
+  }
+  
+  .edit-course-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    border: 2px solid #d4af37; /* Gold border */
+    background-color: #000000;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .form-group textarea {
+    height: 120px;
+    resize: vertical;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    border: 2px solid #d4af37; /* Gold border */
+    margin-right: 10px;
+  }
+  
+  .cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #d4af37; /* Gold border */
+  }
+  
+  .submit-btn:hover {
+    background-color: #d4af37;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d4af37;
+  }
+  

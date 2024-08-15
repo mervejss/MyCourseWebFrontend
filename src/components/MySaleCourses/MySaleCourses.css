@@ -1,86 +1,154 @@
 .courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000000; /* Dark background */
+}
+
+.course-card-container {
+  position: relative;
+  width: 240px;
+  height: 420px; /* Increased height to accommodate new content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+}
+
+.course-card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px; /* Space between the card and buttons */
+}
+
+.edit-button, .delete-button {
+  background: none;
+  border: none;
+  color: #d4af37; /* Gold color */
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.edit-button:hover, .delete-button:hover {
+  color: #f28324; /* Orange color */
+}
+
+.add-course-button {
+  margin-bottom: 20px; /* Space between button and cards */
+}
+
+/* Diğer stil kuralları */
+.course-card {
+  border: 2px solid #d4af37; /* Gold border */
+  border-radius: 12px;
+  background-color: #000000; /* Black background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;.my-sale-courses-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .add-course-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    border: 2px solid #d4af37; /* Gold border */
+    margin-bottom: 20px;
+  }
+  
+  .add-course-button:hover {
+    background-color: #d4af37;
+  }
+  .search-container {
+    position: relative;
+    margin: 20px;
+    background-color: #000000; /* Input background color */
+    width: 1620px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 40px; /* Space for the search icon */
+    border-radius: 8px;
+    border: 2px solid #d4af37; /* Border color matching the theme */
+    background-color: #000000; /* Input background color */
+    color: #ffffff; /* Input text color */
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff; /* Search icon color */
+  }
+.sort-menu-container {
+  flex-shrink: 0 ; /* Prevent the sort menu from shrinking */
+}
+
+  .courses-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #000000; /* Dark background */
+    gap: 20px;
   }
   
-  .course-card {
-    border: 2px solid #d4af37; /* Gold border */
-    border-radius: 12px;
-    width: 240px;
-    height: 420px; /* Increased height to accommodate new content */
-    background-color: #000000; /* Black background */
+  .course-card-container {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .course-card-actions {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff; /* White text color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
-    margin: -10px;
-  }
-  
-  .course-card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More prominent shadow */
-  }
-  
-  .course-name {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: #d4af37; /* Gold color */
-  }
-  
-  .user-name {
-    font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 5px;
-    font-style: italic;
-    color: #b3b3b3; /* Light gray */
-  }
-  
-  .course-category-name {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #d4af37; /* Gold color */
-  }
-  
-  .course-description {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #b3b3b3; /* Light gray */
-  }
-  
-  .course-time,
-  .course-price {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #b3b3b3; /* Light gray */
-  }
-  
-  .course-score-container {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Space between stars and score */
+    justify-content: space-between;
     margin-top: 10px;
-    justify-content: center; /* Center stars and score */
   }
   
-  .star {
-    font-size: 20px; /* Star size */
-    color: #d4af37; /* Gold color */
-  }
-  
-  .star.unfilled {
-    color: #b3b3b3; /* Gray for unfilled stars */
-  }
-  
-  .course-score {
+  .edit-button,
+  .delete-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
     font-size: 16px;
-    color: #fff; /* White color */
+    cursor: pointer;
   }
+  
+  .edit-button {
+    background-color: #000000;
+    color: white;
+    border: 2px solid #d4af37; /* Gold border */
+  }
+  
+  .delete-button {
+    background-color: #000000;
+    color: white;
+    border: 2px solid #d4af37; /* Gold border */
+  }
+  
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #49217e !important;
+  }
+  
+  color: #fff; /* White text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.course-card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More prominent shadow */
+}
