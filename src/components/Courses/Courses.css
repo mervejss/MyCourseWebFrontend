@@ -127,3 +127,31 @@
     color: #ffffff; /* Search icon color */
   }
   
+/* Ensure the styles are applied to progress elements within .course-card */
+.course-card .progress-bar-container {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  height: 20px;
+  width: 100%;
+  margin-top: 10px; /* Add some space above the progress bar */
+  overflow: hidden; /* Ensures progress bar is clipped within container */
+  position: relative; /* Allow positioning of child elements */
+}
+
+.course-card .progress-bar {
+  background-color: #eeff00 !important; /* Bright yellow color */
+  height: 100%;
+  width: 0; /* Start with 0 width for smooth transition */
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out; /* Smooth transition */
+}
+
+.course-card .progress-text {
+  transform: translateY(-50%); /* Vertically center text */
+  font-size: 14px;
+  color: #000000; /* Black text for contrast */
+  z-index: 2; /* Ensure text is above progress bar */
+  white-space: nowrap; /* Prevent text from wrapping */  
+  margin-top: -11px; /* Add some space above the progress bar */
+
+}
