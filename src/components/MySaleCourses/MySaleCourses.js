@@ -110,9 +110,7 @@ const MySaleCourses = () => {
     <h1><strong>Satıştaki Kurslarım</strong></h1>
 
     <div className="my-sale-courses-container">
-      <button onClick={handleAddCourse} className="add-course-button">
-        <span className="plus-icon">+</span> Yeni Kurs Ekle
-      </button>
+      
       <div className="header">
         <div className="search-container">
           <FaSearch className="search-icon" />
@@ -126,6 +124,9 @@ const MySaleCourses = () => {
         </div>
         <SortMenu onSortChange={handleSortChange} />
       </div>
+      <button onClick={handleAddCourse} className="add-course-button">
+        <span className="plus-icon">+</span> Yeni Kurs Ekle
+      </button>
       <div className="courses-container">
         {filteredCourses.map(course => {
           const details = courseDetails[course.courseID] || {};

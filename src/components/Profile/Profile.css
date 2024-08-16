@@ -100,3 +100,21 @@ button:hover {
   background-color: #d4af37; /* Altın sarısı arka plan */
   color: #000000; /* Siyah metin */
 }
+
+
+.edit-profile-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 1115px;
+
+  padding: 10px 20px;
+  background-color: #000000; /* Siyah arka plan */
+  color: #ffffff; /* Beyaz metin */
+  border: 2px solid #d4af37; /* Altın sarısı kenarlık */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
+  text-align: center; /* Metni ortala */
+  display: inline-block; /* Düğmenin düzgün görünmesi için */
+}

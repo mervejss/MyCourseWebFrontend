@@ -1,0 +1,71 @@
+.course-progress-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+    background-color: #000000; /* Black background */
+    min-height: 100vh; /* Minimum height to fit the screen */
+  }
+  
+  .course-progress-card {
+    background-color: #000000; /* Slightly lighter background for card */
+    border: 2px solid #d4af37; /* Gold border */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; /* Card width */
+    position: relative; /* For timestamp positioning */
+    color: #ffffff; /* White text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+  }
+  
+  .course-progress-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+  }
+  
+  .course-progress-title {
+    margin-bottom: 20px;
+  }
+  
+  .progress-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #000000;
+    border: 2px solid #ffd700; /* Gold border */
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .save-button {
+    padding: 10px 20px;
+    border: 2px solid #ffd700; /* Gold border */
+    background-color: #000000;
+    color: #ffd700;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #ffd700;
+    color: #000000;
+  }
+  
+  .comment-timestamps {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    color: #6e6c6c; /* Light grey text for timestamps */
+    font-size: 12px; /* Smaller font size for timestamps */
+  }
+  
+  
+  

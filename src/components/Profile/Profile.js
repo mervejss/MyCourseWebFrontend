@@ -48,7 +48,7 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <h1>Merhaba <strong>{user.userFullName}</strong>, Profil detaylarınızı buradan inceleyebilirsiniz</h1>
-      <button onClick={handleEditClick}>
+      <button onClick={handleEditClick} className="edit-profile-button">
         {isEditing ? 'Geri Dön' : 'Profili Düzenle'}
       </button>
       <div className="profile-container">

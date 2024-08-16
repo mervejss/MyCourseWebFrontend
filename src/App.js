@@ -21,6 +21,7 @@ import MySaleCourses from './components/MySaleCourses/MySaleCourses';
 import SaleHistory from './components/SaleHistory/SaleHistory';
 import AddCourse from './components/AddCourse/AddCourse';
 import EditCourse from './components/EditCourse/EditCourse';
+import CourseProgress from './components/CourseProgress/CourseProgress';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/add-course" element={<AddCourse />} />
         <Route path="/edit-course/:courseID" element={<EditCourse />} />
 
+        <Route path="/course-progress/:courseID" element={<CourseProgress />} />
 
         
 

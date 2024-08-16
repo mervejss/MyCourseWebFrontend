@@ -48,7 +48,7 @@ const MyCourses = () => {
 
   return (
     <div className="head">
-      <h1><strong>Benim Kurslarım</strong></h1>
+      <h1><strong>Satın Aldığım Kurslarım</strong></h1>
       <div className="courses-container">
         {courses.map(course => {
           const details = courseDetails[course.courseID] || {};

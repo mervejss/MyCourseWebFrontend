@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const addLogEntry = async (userID, logAction) => {
     try {
-        await axios.post('http://localhost:8080/logs', {
+        await axios.post('http://localhost:8080/logs/user', {
             userID: userID,
             logAction: logAction
         });

@@ -38,7 +38,9 @@
 }
 
 .add-course-button {
-  margin-bottom: 20px; /* Space between button and cards */
+  margin-bottom: 20px; 
+  margin-left: 70px ; 
+
 }
 
 /* Diğer stil kuralları */
