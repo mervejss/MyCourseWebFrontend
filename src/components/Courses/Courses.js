@@ -123,8 +123,6 @@ const Courses = () => {
           />
         </div>
         <SortMenu onSortChange={handleSortChange} />
-
-
       </div>
       <div className="courses-container">
         {Array.isArray(filteredCourses) && filteredCourses.length > 0 ? (
