@@ -24,6 +24,7 @@ const SortMenu = ({ onSortChange }) => {
     { value: 'oldest', label: 'Eski', icon: faCalendar }
   ];
 
+  
   return (
     <div className="sort-menu">
       <div className="sort-select" onClick={toggleDropdown}>
