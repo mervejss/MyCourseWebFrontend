@@ -1,77 +1,100 @@
-I will use PostgreSQL as the database, REACT as the frontend and Spring Boot for the backend. I will develop a website similar to UDEMY, where education and purchases can be made.
+# MyCourseWebFrontend
 
+## Proje Açıklaması
 
+`MyCourseWebFrontend`, kurs yönetimi ve etkileşimi sağlayan bir web uygulamasıdır. React.js ile geliştirilmiş olan bu frontend, kullanıcıların kursları görüntülemesini, detaylarını incelemesini, yorum yapmasını ve puanlama yapmasını sağlar. Ayrıca, kullanıcılar kurs satın alma işlemlerini de gerçekleştirebilirler.
 
+## İçindekiler
 
+- [Özellikler](#özellikler)
+- [Kurulum](#kurulum)
+  - [Gereksinimler](#gereksinimler)
+  - [Kurulum Adımları](#kurulum-adımları)
+- [Kullanım](#kullanım)
+- [Proje Yapısı](#proje-yapısı)
+- [Teknolojiler](#teknolojiler)
 
+## Özellikler
 
-# Getting Started with Create React App
+### Ana Sayfa (Home)
+- **Kurs Listesi**: Tüm mevcut kursların kısa özetleri, isimleri ve puanlarıyla birlikte görüntülenir.
+- **Kategoriler**: Kurslar, ana kategorilere ve alt kategorilere göre filtrelenebilir.
+- **Arama**: Kullanıcılar, kurs adı veya açıklamasına göre arama yapabilir.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Kurs Detayları (CourseDetails)
+- **Kurs Bilgileri**: Kurs adı, açıklaması, toplam süre, fiyat ve puan gibi detaylar görüntülenir.
+- **Eğitmen Bilgileri**: Kursun eğitmeninin adı ve detayları gösterilir.
+- **Yorumlar**: Kullanıcıların kurs hakkında bıraktığı yorumlar ve puanlar listelenir.
+- **Puanlama ve Yorum**: Kullanıcılar, kursa puan verebilir ve yorum yapabilir.
 
-## Available Scripts
+### Kullanıcı Profili (UserProfile)
+- **Kullanıcı Bilgileri**: Kullanıcının adı, e-posta ve profil resmi gibi bilgileri görüntülenir.
+- **Satın Alma Geçmişi**: Kullanıcının satın aldığı kurslar listelenir.
+- **Yorumlar**: Kullanıcının yaptığı yorumlar ve puanlamalar görüntülenir.
 
-In the project directory, you can run:
+### Kurs Satın Alma (Purchase)
+- **Kurs Satın Alma**: Kullanıcılar kursları sepete ekleyebilir ve satın alabilirler.
+- **Sipariş Durumu**: Siparişlerin durumu (örneğin: "Sipariş Alındı", "Sipariş Onaylandı") takip edilebilir.
 
-### `npm start`
+### Yönetim Paneli (Admin)
+- **Kurs Yönetimi**: Yöneticiler kursları ekleyebilir, düzenleyebilir ve silebilirler.
+- **Kategori Yönetimi**: Kurs kategorileri eklenebilir, düzenlenebilir ve silinebilir.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Kurulum
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Gereksinimler
+- **Node.js (v14 veya üstü)**
+- **npm veya yarn**
 
-### `npm test`
+### Kurulum Adımları
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Depoyu Klonla:**
+    ```bash
+    git clone https://github.com/kullaniciAdi/MyCourseWebFrontend.git
+    ```
 
-### `npm run build`
+2. **Bağımlılıkları Yükle:**
+    ```bash
+    cd MyCourseWebFrontend
+    npm install
+    ```
+    veya
+    ```bash
+    yarn install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Geliştirme Sunucusunu Başlat:**
+    ```bash
+    npm start
+    ```
+    veya
+    ```bash
+    yarn start
+    ```
+   Uygulama varsayılan olarak [http://localhost:3000](http://localhost:3000) adresinde çalışacaktır.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Kullanım
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Ana Sayfa**: Uygulama açıldığında ana sayfa görüntülenir. Buradan kursları listeleyebilir ve kategorilere göre filtreleyebilirsiniz.
+- **Kurs Detayları**: Bir kursun detaylarına gitmek için kursun adına tıklayın. Buradan kurs hakkında daha fazla bilgi alabilir ve yorum yapabilirsiniz.
+- **Kullanıcı Profili**: Kullanıcı profiline erişmek için sağ üst köşedeki profil simgesine tıklayın. Buradan kullanıcı bilgilerinizi ve satın alma geçmişinizi görüntüleyebilirsiniz.
+- **Kurs Satın Alma**: Bir kursu satın almak için kursun detay sayfasına gidin ve "Satın Al" butonuna tıklayın.
+- **Yönetim Paneli**: Yöneticiler, kursları ve kategorileri yönetmek için yönetim paneline giriş yapmalıdır.
 
-### `npm run eject`
+## Proje Yapısı
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **`src/`**: Uygulamanın kaynak kodları.
+  - **`components/`**: Tüm React bileşenleri.
+  - **`pages/`**: Farklı sayfa bileşenleri.
+  - **`services/`**: API çağrıları ve veri işlemleri.
+  - **`styles/`**: CSS ve stil dosyaları.
+  - **`utils/`**: Yardımcı fonksiyonlar ve araçlar.
+- **`App.js`**: Uygulamanın ana bileşeni ve yönlendirme.
+- **`index.js`**: Uygulamanın giriş noktası.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Teknolojiler
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React.js**: Kullanıcı arayüzü oluşturma.
+- **React Router**: Sayfa yönlendirmeleri.
+- **Axios**: API çağrıları.
+- **CSS**: Stil ve tasarım.
