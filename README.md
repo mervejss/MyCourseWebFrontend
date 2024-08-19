@@ -1,6 +1,7 @@
 I will use PostgreSQL as the database, REACT as the frontend and Spring Boot for the backend. I will develop a website similar to UDEMY, where education and purchases can be made.
 
 MyCourseWebFrontend
+
 Proje Açıklaması
 MyCourseWebFrontend projesi, kurs yönetimi ve etkileşimi sağlayan bir web uygulamasıdır. React.js ile geliştirilmiş olan bu frontend, kullanıcıların kursları görüntülemesini, detaylarını incelemesini, yorum yapmasını ve puanlama yapmasını sağlar. Ayrıca, kullanıcılar kurs satın alma işlemlerini de gerçekleştirebilirler.
 
